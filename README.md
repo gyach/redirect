@@ -16,31 +16,16 @@
    - Выберите папку `/ (root)` как директорию для публикации
    - Нажмите "Save"
 
-## Настройка пользовательского домена
-
-1. Приобретите домен (например, через Namecheap, GoDaddy и т.д.)
-2. Настройте DNS-записи:
-   - Добавьте A-запись, указывающую на IP-адреса GitHub Pages:
-     ```
-     185.199.108.153
-     185.199.109.153
-     185.199.110.153
-     185.199.111.153
-     ```
-   - Добавьте CNAME-запись для www, указывающую на ваш основной домен
-3. В настройках GitHub Pages укажите ваш пользовательский домен
-4. Включите HTTPS (GitHub Pages поддерживает его автоматически)
-
 ## Добавление новых редиректов
 
 Для добавления новых редиректов отредактируйте объект `REDIRECTS` в файле `index.html`:
 
 ```javascript
 const REDIRECTS = {
-    'zoom': 'https://us05web.zoom.us/j/81116686762?pwd=yvd6q03psRhRSFELyllk9WSEZ52tpI.1',
-    'meet': 'https://meet.google.com/zbq-gnwd-ksh',
-    'telemost': 'https://telemost.yandex.ru/j/3170511128',
-    // Добавьте здесь новые редиректы
+  zoom: 'https://us05web.zoom.us/j/81116686762?pwd=yvd6q03psRhRSFELyllk9WSEZ52tpI.1',
+  meet: 'https://meet.google.com/zbq-gnwd-ksh',
+  telemost: 'https://telemost.yandex.ru/j/3170511128',
+  // Добавьте здесь новые редиректы
 };
 ```
 
