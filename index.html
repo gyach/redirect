@@ -41,19 +41,16 @@
             'telemost': 'https://telemost.yandex.ru/j/3170511128'
         };
 
-        function getSubdomain() {
-            const host = window.location.hostname;
-            const parts = host.split('.');
-            if (parts.length > 2) {
-                return parts[0];
-            }
-            return null;
+        function getPath() {
+            const path = window.location.pathname;
+            // Убираем начальный и конечный слеш
+            return path.replace(/^\/|\/$/g, '');
         }
 
         function redirect() {
-            const subdomain = getSubdomain();
-            if (subdomain && REDIRECTS[subdomain]) {
-                window.location.href = REDIRECTS[subdomain];
+            const path = getPath();
+            if (path && REDIRECTS[path]) {
+                window.location.href = REDIRECTS[path];
             } else {
                 window.location.href = 'https://github.com/gyach';
             }
