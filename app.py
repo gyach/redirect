@@ -8,9 +8,9 @@ app = Flask(__name__)
 
 # Словарь с маппингом поддоменов на целевые URL
 REDIRECTS = {
-    'blog': 'https://example.com/blog',
-    'shop': 'https://example.com/shop',
-    'docs': 'https://example.com/docs',
+    'zoom': 'https://us05web.zoom.us/j/81116686762?pwd=yvd6q03psRhRSFELyllk9WSEZ52tpI.1',
+    'meet': 'https://meet.google.com/zbq-gnwd-ksh',
+    'telemost': 'https://telemost.yandex.ru/j/3170511128',
     # Добавьте здесь свои поддомены и их целевые URL
 }
 
@@ -26,7 +26,7 @@ def redirect_subdomain(path):
     
     # Если поддомен не найден или это основной домен, 
     # можно перенаправить на главную страницу
-    return redirect('https://gyach.ru', code=301)
+    return redirect('https://github.com/gyach', code=301)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000))) 
