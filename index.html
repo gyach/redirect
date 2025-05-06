@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G4URL - Сервис перенаправления</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .redirect-message {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>G4URL - Сервис перенаправления</h1>
+        <div class="redirect-message">
+            <p>Перенаправление...</p>
+        </div>
+    </div>
+
+    <script>
+        const REDIRECTS = {
+            'zoom': 'https://us05web.zoom.us/j/81116686762?pwd=yvd6q03psRhRSFELyllk9WSEZ52tpI.1',
+            'meet': 'https://meet.google.com/zbq-gnwd-ksh',
+            'telemost': 'https://telemost.yandex.ru/j/3170511128'
+        };
+
+        function getSubdomain() {
+            const host = window.location.hostname;
+            const parts = host.split('.');
+            if (parts.length > 2) {
+                return parts[0];
+            }
+            return null;
+        }
+
+        function redirect() {
+            const subdomain = getSubdomain();
+            if (subdomain && REDIRECTS[subdomain]) {
+                window.location.href = REDIRECTS[subdomain];
+            } else {
+                window.location.href = 'https://github.com/gyach';
+            }
+        }
+
+        // Запускаем редирект при загрузке страницы
+        window.onload = redirect;
+    </script>
+</body>
+</html> 
