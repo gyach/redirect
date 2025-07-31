@@ -5,6 +5,7 @@ const REDIRECTS = {
   зум: 'https://us05web.zoom.us/j/81116686762?pwd=yvd6q03psRhRSFELyllk9WSEZ52tpI.1',
   мит: 'https://meet.google.com/zbq-gnwd-ksh',
   телемост: 'https://telemost.yandex.ru/j/3170511128',
+  dev: 'https://us06web.zoom.us/j/74430241516?pwd=Crm6VuYH8OmHhCC5xNuCGjxXOX5ScX.1',
 };
 
 function getPath() {
