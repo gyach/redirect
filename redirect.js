@@ -1,3 +1,13 @@
+// Принудительное обновление кеша
+if (typeof window !== 'undefined' && window.location) {
+  // Добавляем случайный параметр к URL для обхода кеша
+  const url = new URL(window.location.href);
+  url.searchParams.set('_t', Date.now());
+  if (window.history && window.history.replaceState) {
+    window.history.replaceState({}, '', url.toString());
+  }
+}
+
 const REDIRECTS = {
   zoom: 'https://us05web.zoom.us/j/81116686762?pwd=yvd6q03psRhRSFELyllk9WSEZ52tpI.1',
   meet: 'https://meet.google.com/zbq-gnwd-ksh',
